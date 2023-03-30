@@ -1,42 +1,225 @@
-.App {
+* {
+  margin: 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-shadow: #000000 1px -7px 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.general-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.div-planet img {
+  margin: 0vh 1vw;
 }
 
-.planet{
-  width: 10vw;
+.planet {
+  height: 15vh;
+  transition: height .5s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.planet:hover {
+  height: 30vh;
+  transition: height .5s;
+}
+
+.header-planets {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.background {
+  background-image: url('./images/universe.jpg');
+}
+
+.planet-info {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  color: #ffffff;
+  justify-content: space-around;
+}
+
+.loading-screen {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./images/universe.jpg');
+}
+
+.d-grid {
+  display: grid;
+  grid-template-columns: 34vw 32vw 34vw;
+  grid-template-rows: 95% 5%;
+}
+
+.l {
+  grid-column: 35vw;
+  grid-row: 1;
+}
+
+.c {
+  grid-column: 20vw;
+  grid-row: 1;
+}
+
+.r {
+  grid-column: 35vw;
+  grid-row: 1;
+}
+
+.b {
+  width: 100vw;
+  grid-row: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* margin-top: 2vh; */
+}
+
+.r,
+.c,
+.l {
+  width: 100%;
+  justify-self: center;
+  align-items: center;
+}
+
+.button-back {
+  width: 15vw
+}
+
+@keyframes spinner-border {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 1079px) {
+
+  .loading-screen {
+    background-image: url('./images/universe_vertical.jpg');
+  }
+
+  .planet:hover {
+    height: 15vh;
+    transition: none;
+  }
+
+  .planet-info {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 2vh;
+  }
+
+  .background {
+    background-image: none;
+    background-image: url('./images/universe_vertical.jpg');
+    width: 100vw;
+    height: fit-content;
+  }
+
+  .general-info {
+    padding: 4vh;
+  }
+
+  .general-info h1 {
+    font-size: 4em;
+  }
+
+  .header-planets {
+    margin-top: 10vh;
+    flex-wrap: wrap;
+  }
+
+  .div-planet {
+    width: 40vw;
+    margin-bottom: 2vh;
+  }
+
+  .div-planet:hover {
+    border: 5px solid #ffe1a0;
+    border-radius: 30px;
+  }
+
+  .button-back {
+    width: 50vw;
+    height: 10vh;
+    margin: 50px;
+    font-size: 10vw;
+  }
+
+  .spinner-border {
+    width: 200px;
+    height: 200px;
+    border-width: 20px;
+  }
+
+  h1 {
+    font-size: 10em;
+  }
+
+  h2 {
+    font-size: 5em;
+  }
+
+  p,
+  h3 {
+    font-size: 2.5em;
+  }
+
+  .d-grid {
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 40vh 25vh 15vh;
+    width: 100vw;
+    height: fit-content;
+    grid-template-areas: "top"
+      "content"
+      "bottom";
+    margin-top: 5vh;
+  }
+
+  .l {
+    grid-area: top;
+  }
+
+  .c {
+    display: none;
+    grid-area: center;
+  }
+
+  .r {
+    grid-area: content;
+  }
+
+  .b {
+    grid-area: bottom;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffe1a0;
+    color: #000000
   }
 }
