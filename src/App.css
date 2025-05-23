@@ -8,7 +8,7 @@ h2,
 h3,
 h4,
 h5 {
-  text-shadow: #000000 1px -7px 10px;
+  /* text-shadow: #000000 1px -7px 10px; */
 }
 
 .general-info {
@@ -44,15 +44,27 @@ h5 {
 
 .background {
   background-image: url('./images/universe.jpg');
+  height: 100vh;
 }
 
 .planet-info {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  color: #ffffff;
+  width: full;
+  height: 100%;
+  color: rgba(255, 255, 255, 1);
   justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.planet-info h1 {
+  font-size: 8vh;
+  color: rgba(0, 0, 0, 1);
+  background-color: rgba(255, 255, 255, 0.9);
+  width: fit-content;
+  align-self: center;
+  border-radius: 1vw;
+  padding: 0.5vw
 }
 
 .loading-screen {
@@ -85,15 +97,6 @@ h5 {
 .r {
   grid-column: 35vw;
   grid-row: 1;
-}
-
-.b {
-  width: 100vw;
-  grid-row: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  /* margin-top: 2vh; */
 }
 
 .r,

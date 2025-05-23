@@ -34,26 +34,25 @@ export default function CelestialObject(props) {
 
   return <>
     {planet ? (
-      <div className="planet-info background">
-        <h1>{planet.name}</h1>
-        <div className="d-grid">
-          <div className="l d-flex flex-column justify-content-around">
-            <div><h2>{planet.mass} Jupiters</h2><p>Mass *</p></div>
-            <div><h2>{planet.distance_light_year * (9.46 * (10 ** 12))} km</h2><p>Distance from earth</p></div>
-            <div><h2>{planet.period} days</h2><p>Orbital period of the planet</p></div>
+      <div className="background">
+        <div className="planet-info">
+          <h1>{planet.name}</h1>
+          <div className="d-grid">
+            <div className="l d-flex flex-column justify-content-around">
+              <div><h2>{planet.mass} Jupiters</h2><p>Mass <p>(1 Jupiter = 1.898.130 x 10<sup>21</sup> kg)</p></p></div>
+              <div><h2>{planet.distance_light_year * (9.46 * (10 ** 12))} km</h2><p>Distance from earth</p></div>
+              <div><h2>{planet.period} days</h2><p>Orbital period of the planet</p></div>
+            </div>
+            <div className="c">
+              <img src={require(`../images/${planet.name}.png`)} />
+            </div>
+            <div className="r d-flex flex-column justify-content-around">
+              <div><h2>{planet.radius} Jupiters</h2><p>Average radius of the planet <p>(1 Jupiter = 69911 km)</p></p></div>
+              <div><h2>{planet.temperature} Kelvin</h2><p>Average surface temperature of the planet <p>(0 Kelvin = - 273.15 °C)</p></p></div>
+            </div>
           </div>
-          <div className="c">
-            <img src={require(`../images/${planet.name}.png`)} />
-          </div>
-          <div className="r d-flex flex-column justify-content-around">
-            <div><h2>{planet.radius} Jupiters</h2><p>Average radius of the planet **</p></div>
-            <div><h2>{planet.temperature} Kelvin</h2><p>Average surface temperature of the planet ***</p></div>
-          </div>
-          <div className="b">
-            <p>*(1 Jupiter = 1.898 * 1027 kg)</p><p>**(1 Jupiter = 69911 km)</p><p>***(0 Kelvin = 0 - 273.15 °C)</p>
-          </div>
+        <Link  to='/'><button className="button-back btn btn-light">Back</button></Link>
         </div>
-        <Link to='/'><button className="button-back btn btn-light">Back</button></Link>
       </div>
     ) : (
       <div className='loading-screen'>
